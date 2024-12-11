@@ -1,0 +1,28 @@
+﻿<Page x:Class="TourProject.Pages.BasicInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TourProject.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="850"
+      Title="BasicInfoPage">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel>
+            <Label Content="Дата начала периода" FontSize="20" HorizontalAlignment="Right"/>
+            <Label Content="Дата окончания периода" FontSize="20" HorizontalAlignment="Right"/>
+            <Label Content="Количество дней" FontSize="20" HorizontalAlignment="Right"/>
+            <Label Content="Количество человек" FontSize="20" HorizontalAlignment="Right"/>
+        </StackPanel>
+        <StackPanel>
+            <DatePicker VerticalAlignment="Center" Margin="8" Width="150"/>
+            <DatePicker VerticalAlignment="Center" Margin="8" Width="150"/>
+            <TextBox x:Name="DaysCountTextBox" Width="25" HorizontalAlignment="Left" Margin="8" TextChanged="CountTextBox_TextChanged"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="PeopleCountTextBox" Width="25" HorizontalAlignment="Left" Margin="8" TextChanged="CountTextBox_TextChanged"/>
+                <CheckBox x:Name="ChildrenTextBox"  Margin="8" Content="Дети"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

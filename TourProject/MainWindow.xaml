@@ -46,11 +46,11 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-            <Label Content="Наименование шага" FontSize="25" HorizontalAlignment="Center"/>
-            <Frame x:Name="MainFrame" Width="850" Height="320"/>
+            <Label x:Name="NameLabel" Content="Наименование шага" FontSize="25" HorizontalAlignment="Center"/>
+            <Frame x:Name="MainFrame" Width="850" Height="200" NavigationUIVisibility="Hidden"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Пропустить"  Height="50" Width="150" Margin="10" FontSize="20" FontWeight="Bold" />
-                <Button Content="Далее" Height="50" Width="150" Margin="10" FontSize="20" FontWeight="Bold" />
+                <Button x:Name="SkipButton" Content="Пропустить"  Height="50" Width="150" Margin="10" FontSize="20" FontWeight="Bold" Click="SkipButton_Click"/>
+                <Button x:Name="NextButton" Content="Далее" Height="50" Width="150" Margin="10" FontSize="20" FontWeight="Bold" Click="NextButton_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

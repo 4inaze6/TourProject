@@ -16,8 +16,4 @@
     <Resource Include="бургер.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
-
 </Project>
