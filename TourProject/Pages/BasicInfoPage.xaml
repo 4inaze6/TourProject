@@ -8,7 +8,7 @@
       d:DesignHeight="200" d:DesignWidth="850"
       Title="BasicInfoPage">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <StackPanel>
             <Label Content="Дата начала периода" FontSize="20" HorizontalAlignment="Right"/>
             <Label Content="Дата окончания периода" FontSize="20" HorizontalAlignment="Right"/>

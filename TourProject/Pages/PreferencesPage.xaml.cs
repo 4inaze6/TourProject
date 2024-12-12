@@ -20,6 +20,7 @@ namespace TourProject.Pages
     /// </summary>
     public partial class PreferencesPage : Page
     {
+        private ListViewItem _draggedItem;
         public PreferencesPage()
         {
             InitializeComponent();
@@ -27,10 +28,10 @@ namespace TourProject.Pages
 
         private void SourceListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var item = FindAncestor<ListViewItem>((DependencyObject)e.OriginalSource);
-            if (item != null)
+            _draggedItem = FindAncestor<ListViewItem>((DependencyObject)e.OriginalSource);
+            if (_draggedItem != null)
             {
-                DragDrop.DoDragDrop(sourceListView, item, DragDropEffects.Move);
+                DragDrop.DoDragDrop(sourceListView, _draggedItem, DragDropEffects.Move);
             }
         }
 
@@ -39,9 +40,30 @@ namespace TourProject.Pages
             if (e.Data.GetDataPresent(typeof(ListViewItem)))
             {
                 ListViewItem item = (ListViewItem)e.Data.GetData(typeof(ListViewItem));
-                targetListView.Items.Add(new ListViewItem { Content = item.Content });
 
-                sourceListView.Items.Remove(item);
+                if (targetListView.Items.Contains(item))
+                {
+                    targetListView.Items.Remove(item);
+                }
+                else
+                {
+                    if (sourceListView.Items.Contains(item))
+                    {
+                        sourceListView.Items.Remove(item);
+                    }
+                }
+
+                var targetItem = FindAncestor<ListViewItem>((DependencyObject)e.OriginalSource);
+                int index = targetListView.Items.IndexOf(targetItem);
+
+                if (index < 0)
+                {
+                    targetListView.Items.Add(new ListViewItem { Content = item.Content });
+                }
+                else
+                {
+                    targetListView.Items.Insert(index, new ListViewItem { Content = item.Content });
+                }
             }
         }
 
@@ -69,6 +91,15 @@ namespace TourProject.Pages
                 current = VisualTreeHelper.GetParent(current);
             }
             return null;
+        }
+
+        private void targetListView_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            _draggedItem = FindAncestor<ListViewItem>((DependencyObject)e.OriginalSource);
+            if (_draggedItem != null)
+            {
+                DragDrop.DoDragDrop(targetListView, _draggedItem, DragDropEffects.Move);
+            }
         }
     }
 }

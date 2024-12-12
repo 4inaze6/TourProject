@@ -5,10 +5,55 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TourProject.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="200" d:DesignWidth="850"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="HotelConditionsPage">
 
-    <Grid>
-        <Label Content="HotelConditions"/>
-    </Grid>
+    <StackPanel>
+        <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+            <Label Content="Категория отеля:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="⭐" FontSize="30" Foreground="Gray" Tag="1"/>
+                <TextBlock Text="⭐" FontSize="30" Foreground="Gray" Tag="2"/>
+                <TextBlock Text="⭐" FontSize="30" Foreground="Gray" Tag="3"/>
+                <TextBlock Text="⭐" FontSize="30" Foreground="Gray" Tag="4"/>
+                <TextBlock Text="⭐" FontSize="30" Foreground="Gray" Tag="5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+            <Label Content="Тип питания:"/>
+            <ComboBox x:Name="FoodTypeComboBox">
+                <ComboBoxItem Content="Завтрак"/>
+                <ComboBoxItem Content="Полупансион"/>
+                <ComboBoxItem Content="Все включено"/>
+                <ComboBoxItem Content="Без питания"/>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+            <Label Content="Дополнительные услуги:"/>
+            <UniformGrid Rows="3" Columns="3">
+                <CheckBox Content="SPA"/>
+                <CheckBox Content="Свадьба"/>
+                <CheckBox Content="WiFi"/>
+                <CheckBox Content="Спорт"/>
+                <CheckBox Content="VIP"/>
+                <CheckBox Content="Кондиционер"/>
+                <CheckBox Content="FIT"/>
+                <CheckBox Content="Эксклюзив"/>
+                <CheckBox Content="Трансфер"/>
+            </UniformGrid>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+            <Label Content="Стоимость тура:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ElementName=slider, Path=Value}" Margin="10,0"/>
+                <Slider x:Name="Slider" Minimum="0" Maximum="100000" TickFrequency="1000" Value="0" Width="200" Margin="5"/>
+                <TextBlock Text="{Binding ElementName=slider, Path=Value}" Margin="10,0"/>
+            </StackPanel>
+            <TextBlock Text="от" HorizontalAlignment="Left" Margin="5,0"/>
+            <TextBlock Text="до" HorizontalAlignment="Right" Margin="5,0"/>
+        </StackPanel>
+    </StackPanel>
 </Page>

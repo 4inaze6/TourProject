@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TourProject"
         mc:Ignorable="d"
-        Title="Туристическое агенство" Height="650" Width="1000"
+        Title="Туристическое агенство" Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize">
@@ -47,7 +47,7 @@
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
             <Label x:Name="NameLabel" Content="Наименование шага" FontSize="25" HorizontalAlignment="Center"/>
-            <Frame x:Name="MainFrame" Width="850" Height="200" NavigationUIVisibility="Hidden"/>
+            <Frame x:Name="MainFrame" Width="850" Height="350" NavigationUIVisibility="Hidden"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="SkipButton" Content="Пропустить"  Height="50" Width="150" Margin="10" FontSize="20" FontWeight="Bold" Click="SkipButton_Click"/>
                 <Button x:Name="NextButton" Content="Далее" Height="50" Width="150" Margin="10" FontSize="20" FontWeight="Bold" Click="NextButton_Click"/>

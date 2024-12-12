@@ -24,7 +24,8 @@
 
                 <ListView x:Name="targetListView" Width="200" Height="130" AllowDrop="True" 
                   Drop="targetListView_Drop"
-                  DragOver="targetListView_DragOver">
+                  DragOver="targetListView_DragOver"
+                  PreviewMouseLeftButtonDown="targetListView_PreviewMouseLeftButtonDown">
                 </ListView>
             </StackPanel>
         </StackPanel>
